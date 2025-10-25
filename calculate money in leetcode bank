@@ -1,0 +1,9 @@
+class Solution:
+    def totalMoney(self, n):
+        weeks = n // 7
+        days = n % 7
+        total = 0
+        for w in range(weeks):
+            total += sum(range(1 + w, 8 + w))
+        total += sum(range(1 + weeks, 1 + weeks + days))
+        return total
